@@ -1,0 +1,123 @@
+* {
+
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+}
+
+.container {
+    display: grid;
+    grid-template-areas: 
+    "box1 box2 box3 box4";
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    column-gap: 2px;
+}
+
+.box1 {
+    grid-area: box1;
+    border: 1px solid black;
+}
+
+.box2 {
+    grid-area: box2;
+    border: 1px solid black; 
+}
+
+.box3 {
+    grid-area: box3;
+    border: 1px solid black;
+}
+
+.box4 {
+    grid-area: box4;
+    border: 1px solid black;
+}
+
+.box1 .box2 .box3 .box4 {
+    display: grid;
+    grid-template-areas: 
+    "flower"
+    "text"
+    "lw";
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 2fr 1fr;
+}
+
+.flower {
+    grid-area: flower;
+    width: 100%
+}
+
+.text {
+    grid-area: text;
+    padding: 20px;
+    border-bottom: 1px solid #a2a2a1;
+}
+
+.lw {
+    grid-area: lw;
+    display: grid;
+    grid-template-areas: 
+    "button space view";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    padding: 5px
+}
+
+.button {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px 10px;
+    background: #f89a9a;
+    color: black;
+    text-align: center;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.button:active {
+    color:white;
+    background-color: #883954;
+}
+
+.view {
+    grid-area: view;
+    text-align: right;
+}
+
+@media (max-width: 1200px) {
+    .container {
+        grid-template-areas: 
+            "box1 box2"
+            "box3 box4";
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        row-gap: 2px;
+    }
+    body {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        grid-template-areas: 
+            "box1"
+            "box2"
+            "box3"
+            "box4";
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        row-gap: 2px;
+    }
+    body {
+        font-size: 14px;
+    }
+}
+ 

@@ -1,0 +1,90 @@
+* {
+
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas: 
+        "header  header header"
+        "aside1 content aside2"
+        "footer  footer footer";
+    grid-template-columns: 1fr 3fr 1fr; 
+    grid-template-rows: 30px auto 30px;
+}
+
+.header {
+    grid-area: header;
+    background: orange;
+    color: black;
+    text-align: center;
+}
+
+.aside1 {
+    grid-area: aside1;
+    background: yellow;
+    color: black;
+    text-align: center;
+}
+
+.aside2 {
+    grid-area: aside2;
+    background: palevioletred;
+    color: black;
+    text-align: center;
+}
+
+.content {
+    grid-area: content;
+    background: rgb(61, 172, 192);
+    color: black;
+    grid-template-areas: 
+    "text"
+    "flower";
+    grid-template-columns: auto;
+    grid-template-rows: 1fr 20fr;
+}
+
+.text {
+    grid-area: text;
+    margin: 3px
+}
+
+.flower {
+    grid-area: flower;
+    width: 95%;
+    display: block;
+    padding: 10px;
+    margin: auto;
+}
+
+.footer {
+    grid-area: footer;
+    background: green;
+    color: black;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .grid-container {
+        grid-template-areas: 
+            "header"
+            "content"
+            "aside1"
+            "aside2"
+            "footer";
+        grid-template-columns: 1fr;
+        grid-template-rows: 30px auto 200px 200px 30px;
+    }
+    body {
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 20px;
+    }
+}
